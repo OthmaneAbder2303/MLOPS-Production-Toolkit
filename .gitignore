@@ -1,0 +1,44 @@
+.DS_Store
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.pnpm-debug.log
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+# Virtual Environments
+venv/
+env/
+.venv/
+.env/
+ENV/
+env.bak/
+venv.bak/
+# IDEs and Editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+# Thumbnails
