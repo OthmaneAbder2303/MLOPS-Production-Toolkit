@@ -1,4 +1,4 @@
-from airflow.decorators import dag, task
+from airflow.decorators import dag, task, daily
 from airflow.providers.http.hooks.http import HttpHook
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 import json
@@ -10,8 +10,8 @@ from datetime import timedelta
 LATITUDE = "50.5074"
 LONGITUDE = "3.0330"
 
-POSTGRES_CONN_ID = "postgres"
-WEATHER_API_CONN_ID = "https://api.open-meteo.com"
+POSTGRES_CONN_ID = "postgres_default"
+WEATHER_API_CONN_ID = "open_meteo_api"
 
 # default_args = {
 #     'owner': 'airflow',
@@ -20,6 +20,7 @@ WEATHER_API_CONN_ID = "https://api.open-meteo.com"
 #     'retry_delay': timedelta(minutes=5),
 # }
 ## because airflow stopped working with days_ago
+
 default_args = {
     'owner': 'airflow',
     'start_date': datetime(2026, 1, 31),
@@ -30,6 +31,7 @@ default_args = {
 @dag(
     dag_id='weather_etl_pipeline',
     default_args=default_args,
+    schedule_interval='@daily',
     catchup=False,
 )
 
@@ -63,7 +65,6 @@ def weather_etl_pipeline():
             "windspeed": current_weather.get("windspeed"),
             "winddirection": current_weather.get("winddirection"),
             "weathercode": current_weather.get("weathercode"),
-            "time": current_weather.get("time"),
         }
         return transformed_data
     
