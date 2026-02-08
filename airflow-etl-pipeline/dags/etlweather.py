@@ -1,4 +1,4 @@
-from airflow.decorators import dag, task, daily
+from airflow.decorators import dag, task
 from airflow.providers.http.hooks.http import HttpHook
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 import json
@@ -31,7 +31,7 @@ default_args = {
 @dag(
     dag_id='weather_etl_pipeline',
     default_args=default_args,
-    schedule_interval='@daily',
+    #schedule_interval='@daily',
     catchup=False,
 )
 
