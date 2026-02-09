@@ -32,6 +32,7 @@ default_args = {
     dag_id='weather_etl_pipeline',
     default_args=default_args,
     #schedule_interval='@daily',
+    schedule=timedelta(minutes=1),
     catchup=False,
 )
 
