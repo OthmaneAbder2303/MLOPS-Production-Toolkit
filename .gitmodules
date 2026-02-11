@@ -1,0 +1,3 @@
+[submodule "github-actions-automation"]
+	path = github-actions-automation
+	url = https://github.com/OthmaneAbder2303/GitHub-Actions-Automation.git
