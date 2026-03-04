@@ -45,3 +45,13 @@ venv.bak/
 mlruns/
 artifacts/
 data/
+
+# Checkpoint files
+*.ckpt
+*.h5
+*.pt
+*.pth
+*.model
+*.sav
+*.ipynb_checkpoints/
+*/anaconda_projects/
