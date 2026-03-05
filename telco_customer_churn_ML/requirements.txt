@@ -1,5 +1,6 @@
 pandas
 numpy
+seaborn
 scikit-learn
 mlflow
 fastapi
@@ -10,3 +11,4 @@ python-dotenv
 joblib
 great_expectations
 statsmodels
+lightgbm
