@@ -4,6 +4,7 @@ seaborn
 scikit-learn
 lightgbm
 xgboost
+optuna
 mlflow
 fastapi
 uvicorn
